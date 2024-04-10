@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>СтройФест</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+  <header>
+    <h1>Строительная компания "СтройФест"</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Типы зданий</h2>
+        <table class="table">
+            <tr>
+                <th>Тип здания</th>
+                <th>Описание</th>
+		    </tr>
+          {% for row1, row2 in test %}
+            <tr>
+                <td> {{ row1 }}</td>
+                <td> {{ row2 }}</td>
+            </tr> 
+          {% endfor %}
+        </table>
+    </section>
+    <section>
+      <h2>Готовые решения</h2>
+        <table class="table">
+            <tr>
+                <th>Тип здания</th>
+                <th>Площадь</th>
+		    </tr>
+          {% for row1, row2 in build %}
+            <tr>
+                <td> {{ row1 }}</td>
+                <td> {{ row2 }} м²</td>
+            </tr> 
+          {% endfor %}
+        </table>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Подготовил: Васильев Данил Алексеевич. "Программист, но не фронтэнд"</p>
+  </footer>
+</body>
+</html>
